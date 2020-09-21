@@ -19,6 +19,7 @@ the probabilty over all the labels must be one so p(x) is not needed.
 import numpy as np
 import mxnet as mx
 from mxnet import nd
+import matplotlib.pyplot as plt
 
 # we go over one observation at a time (speed doesn't matter here)
 def transform(data, label):
@@ -60,7 +61,7 @@ for i in range(10):
 py = ycount / nd.sum(ycount)
 
 
-import matplotlib.pyplot as plt
+# plot the calculated probabilities.
 fig, figarr = plt.subplots(1, 10, figsize=(15, 15))
 for i in range(10):
     figarr[i].imshow(xcount[:, i].reshape((28, 28)).asnumpy(), cmap='hot')
