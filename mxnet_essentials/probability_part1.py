@@ -3,43 +3,48 @@
 
 import mxnet as mx
 from mxnet import nd
+from matplotlib import pyplot as plt
 
-# die probabilities
+# simple die probabilities
 # we will try to draw samples to assign probs to each side of the dice.
-# first we assume that each has 1/6
-
+# we assume that each has and equal 1/6.
 probabilities = nd.ones(6) / 6
 print(probabilities)
+# draw samples from the distribution.
 nd.sample_multinomial(probabilities)
 
 # multiple draws at one time
 print(nd.sample_multinomial(probabilities, shape=(10)))
 print(nd.sample_multinomial(probabilities, shape=(5,10)))
 
-# now lets roll 1000 times
+# create a thousand samples.
 rolls = nd.sample_multinomial(probabilities, shape=(1000))
 
+# show how many time each side was repeated over the whole course of sampling.
 counts = nd.zeros((6,1000))
+# total count for each side.
 totals = nd.zeros(6)
 for i, roll in enumerate(rolls):
     totals[int(roll.asscalar())] += 1
     counts[:, i] = totals
 
-totals / 1000
+# total probability for each.
+# should get more close to 1/6 as we throw in more samples.
+print(totals / 1000)
 
-counts
+print(counts)
 
+# normalize the counts by the step number.
 x = nd.arange(1000).reshape((1,1000)) + 1
 estimates = counts / x
+# show how probabilites evolved when given more samples.
 print(estimates[:,0])
 print(estimates[:,1])
 print(estimates[:,100])
-
 print(estimates[:, -1])
 
-from matplotlib import pyplot as plt
-# they were mostly high at first but converge over time.
 
+# probs were mostly high at first but converged over time.
 plt.plot(estimates[0, :].asnumpy(), label="Estimated P(die=1)")
 plt.plot(estimates[1, :].asnumpy(), label="Estimated P(die=2)")
 plt.plot(estimates[2, :].asnumpy(), label="Estimated P(die=3)")
