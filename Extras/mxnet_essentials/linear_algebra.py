@@ -64,7 +64,7 @@ print('u - v', u - v)
 print('u * v', u * v)
 print('u / v', u / v)
 
-B = mx.nd.ones_like(A) * 3
+B = mx.nd.ones_like(A) *  3
 print('B =', B)
 print('A + B =', A + B)
 print('A * B =', A * B)
