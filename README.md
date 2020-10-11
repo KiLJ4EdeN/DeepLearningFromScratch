@@ -1,2 +1,4 @@
 # Mxnet_AddOns
-mxnet utlities
+
+Note book implementations of dive into deep learning (d2l) book. 
+https://d2l.ai/
