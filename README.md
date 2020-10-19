@@ -1,6 +1,6 @@
-# Mxnet_AddOns
+# DeepLearningFromScratch
 
-Note book implementations of dive into deep learning (d2l) book. 
+Notebook Implementations of the Dive Into Deep Learning (d2l) Book, With more Intresting Applications Included.
 https://d2l.ai/
 
 
