@@ -14,3 +14,4 @@ https://d2l.ai/
 * **Chapter 2:** Supervised Learning
     * [Linear Regression *(from scratch and with ``gluon``)*](https://github.com/KiLJ4EdeN/Mxnet_AddOns/blob/master/LinearNeuralNetworks/LinearRegressionFromScratchGluon.ipynb)
     * [Softmax Regression *(from scratch)*](https://github.com/KiLJ4EdeN/Mxnet_AddOns/blob/master/LinearNeuralNetworks/SoftmaxRegressionFromScratch.ipynb)
+    * [Softmax Regression *(with ``gluon``)*](https://github.com/KiLJ4EdeN/Mxnet_AddOns/blob/master/LinearNeuralNetworks/SoftmaxRegressionGluon.ipynb)
